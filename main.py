@@ -151,7 +151,7 @@ try:
 
                     elif last_signal == "8":
                         print("Motors moving")
-                        move_motors(speed=30)
+                        move_motors(speed=75)
 
                     elif last_signal == "9":
                         print("Servos moving")
