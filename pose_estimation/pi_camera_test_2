@@ -73,7 +73,7 @@ try:
 
                 # Update the timer
                 last_wave_detection_time = current_time
-                functions.follow_human(head)
+                # functions.follow_human(head)
 
         # Add a delay to control the frame rate
         time.sleep(1 / FRAME_RATE)

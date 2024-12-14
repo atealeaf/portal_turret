@@ -45,11 +45,18 @@ while cap.isOpened():
        right_elbow = pose_results.pose_landmarks.landmark[14]
        right_wrist = pose_results.pose_landmarks.landmark[16]
        head = pose_results.pose_landmarks.landmark[0]
+       right_hip = pose_results.pose_landmarks.landmark[24]
+       left_hip = pose_results.pose_landmarks.landmark[23]
     #    print(left_wrist)
        # Calculate angles
        left_angle = functions.calculate_angle(left_shoulder, left_elbow, left_wrist)
        right_angle = functions.calculate_angle(right_shoulder, right_elbow, right_wrist)
-
+       left_hip_angle = functions.calculate_angle(left_hip, left_shoulder, left_elbow)
+       right_hip_angle = functions.calculate_angle(right_hip, right_shoulder, right_elbow)
+       left_gesture_detected = functions.detect_gesture(left_angle, left_hip_angle)
+       right_gesture_detected = functions.detect_gesture(right_angle, right_hip_angle)
+       print(f"Left gesture Detected: {left_wave_detected}")
+       print(f"Right gesture Detected: {right_wave_detected}")
        # Append angles
        left_angle_list.append(left_angle)
        right_angle_list.append(right_angle)
@@ -69,8 +76,7 @@ while cap.isOpened():
            # Update the timer
         #    print(left_angle_list)
            last_wave_detection_time = current_time
-           functions.follow_human(head)
-    
+        #    functions.follow_human(head)
       
        # Draw skeleton on the frame
        mp_drawing.draw_landmarks(frame, pose_results.pose_landmarks, mp_pose.POSE_CONNECTIONS)

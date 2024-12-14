@@ -10,7 +10,8 @@ from scipy.fftpack import fft
 def calculate_angle(joint1, joint2, joint3):
    """
    Calculate the angle between three joints.
-   
+
+   Returns the angle.
    """
    
    vector1 = [joint1.x - joint2.x, joint1.y - joint2.y]
@@ -106,17 +107,31 @@ def detect_wave_motion(angle_deque, wrist, elbow):
 
 
 
-def follow_human(head_pose):
+def follow_human(head_pose, num_LED):
    """
    section vision window into sections based on how many LEDs there are. Categorize where the head pose is
-   and light up LED based on position to simulate eye tracking
+   and light up LED based on position to simulate eye tracking.
+   we are imagining the leds are installed in a n by n square. 
+   so the actual numbers of led would equal to num_LED*num_LED where num_LED = n
+   returns the index of where the head is in the grid world
+   Ex. if the head is in the middel grid of a 3 by 3 grid it sould return
+   [1, 1] as the count starts from 0.
    """
-   # cap.get(3) 
-   # cap.get(4)
-   mid_point = 1/2
-   if head_pose.x > mid_point:
-       print("right")
-   else:
-       print("left")
+   section_len = 1/num_LED
+   x_index = math.floor(head_pose.x /section_len )
+   y_index= math.floor(head_pose.y/section_len)
 
+   return [x_index, y_index]
+
+def detect_gesture(arm_angle, torso_arm_angle):
+    """
+    detects the gesture of holding arm out to either left or right to activate wing
+    movement in the turret.
+
+    Returns true or false
+    """
+    if 170 < arm_angle < 190:
+        if  80 <torso_arm_angle< 100:
+            return True
+    
 
