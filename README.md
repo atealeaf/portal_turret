@@ -18,7 +18,8 @@ Long link: https://catmoonster17.github.io/pie-2024-03/portal-turret/software.ht
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/atealeaf/portal_turret.git
-   cd portal_turret```
+   cd portal_turret
+   ```
 
 2. **Install dependencies:**
   Make sure you have Python 3.7 or higher installed on your Raspberry Pi. Then, install the required libraries:
