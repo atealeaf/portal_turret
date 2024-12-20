@@ -1,3 +1,10 @@
+"""
+This module runs the main loop for the Portal Turret replica using
+an IR remote. The turret can run in many modes, including stimulus
+detection, music playback with dancing, music playback without
+dancing, and manual mode.
+"""
+
 import os
 import sys
 import time 
@@ -41,6 +48,10 @@ signal_queue = queue.Queue()
 
 # Function to handle IR signals
 def handle_ir_signals():
+    """
+    Read the current IR signal. Depending on the signal, 
+    different actions may occur.
+    """
     global mode, previous_time
     while True:
         signal = read_ir(client)
