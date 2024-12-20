@@ -77,7 +77,7 @@ def detect_wave_motion(angle_deque, wrist, elbow):
         True if at least 3 waves are detected, False otherwise.
     """
     wave_detected = False
-    print(wrist.y>elbow.y)
+    # print(wrist.y>elbow.y)
     if wrist.y <elbow.y:
         
         angle_list = list(angle_deque)
