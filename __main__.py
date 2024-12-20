@@ -1,3 +1,9 @@
+"""
+This module runs the main loop for the Portal Turret replica using
+an IR remote control. It can run in multiple modes, including 
+stimulus detection, music playback with dance, music playback without 
+dance, and manual control. 
+"""
 import os
 import sys
 import time 
