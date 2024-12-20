@@ -12,7 +12,7 @@ Long link: https://catmoonster17.github.io/pie-2024-03/portal-turret/software.ht
 - Control motors and servos.
 - Respond to sound levels and IR remote control signals.
 - Play audio and music based on sensor inputs.
-- 
+
 ## Installation
 
 1. **Clone the repository:**
@@ -28,7 +28,7 @@ Long link: https://catmoonster17.github.io/pie-2024-03/portal-turret/software.ht
   ```
 
 3. **Install LIRC:**
-  Follow the instructions on the [LIRC website](https://www.lirc.org/) to set up the IR remote control functionality.
+   Follow the instructions on the [LIRC website](https://www.lirc.org/) to set up the IR remote control functionality.
 
 4. **Run the software:**
   Execute the main program:
